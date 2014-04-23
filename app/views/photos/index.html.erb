@@ -1,0 +1,29 @@
+<form id="btn" disabled="disabled">
+  <input type="string" />
+</form>
+
+<div class="container" id="photostream">
+  <% @groups.each do |group| %>
+    <div class="item item-w-<%= group.length%> cf">
+      <% group.each do |photo| %>
+        <div class="thumbnail"><img width="100%" src="<%= photo.image_url %>" /></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(function(){
+    $('#btn input').focus();
+    $("#btn").submit(function(){
+      return false;
+    });
+    $('#btn input').bind('keypress', function(e) {
+      if(e.keyCode==13){
+        $.post("<%= photos_path %>", function(data){
+          $("#photostream").prepend("<li><img width=\"200\" src=\"" + data.image_url + "\"/></li>")
+        })
+      }
+    });
+  });
+</script>

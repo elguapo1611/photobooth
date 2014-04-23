@@ -1,0 +1,50 @@
+body {
+  background:#000;
+}
+.container {
+  max-width: 960px;
+  .thumbnail {
+    float:left;
+  }
+  .item {
+    background:#fff;
+    margin-bottom:20px;
+  }
+  .item-w-1 {
+    width:20%;
+    .thumbnail {
+      width:100%;
+    }
+  }
+
+  .item-w-2 {
+    width:40%;
+    .thumbnail {
+      width:50%;
+    }
+  }
+
+  .item-w-3 {
+    width:60%;
+    .thumbnail {
+      width:33%;
+    }
+  }
+  .item-w-4 {
+    width:80%;
+    .thumbnail {
+      width:25%;
+    }
+  }
+  .item-w-5 {
+    width:100%;
+    .thumbnail {
+      width:20%;
+    }
+  }
+
+}
+
+.cf:before, .cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+.cf { zoom: 1; }
