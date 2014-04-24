@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
   private
 
   def image_url(photo_id)
-    "./app/assets/images/img#{photo_id}.jpg"
+    "./app/assets/images/booth/img#{photo_id}.jpg"
   end
 
   def kill_ptp_camera

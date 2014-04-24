@@ -1,8 +1,10 @@
 <div class="container">
   <div class="cf featured" id="current_photo">
-    <a class="thumbnail">
-      <img alt="Roeland!" src="<%= @photos.first.image_url %>">
-    </a>
+    <% if @photos.first %>
+      <a class="thumbnail">
+        <img alt="Roeland!" src="<%= @photos.first.image_url %>">
+      </a>
+    <% end %>
   </div>
 
   <ul class="polaroids large-block-grid-4 small-block-grid-2" id="photostream">    
