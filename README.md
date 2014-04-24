@@ -1,13 +1,9 @@
-== README
+## README
 
-A simple photobooth application
+A simple photobooth application.  This app is only tested on Mac OSX Mavericks
 
-Things you may want to cover:
-
-* This app is only tested on Mac OSX Mavericks
-
-`brew install gphoto2`
-`bundle`
-`rake db:setup`
-`rails s`
+* `brew install gphoto2`
+* `bundle`
+* `rake db:setup`
+* `rails s`
 
