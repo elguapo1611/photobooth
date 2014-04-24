@@ -1,28 +1,29 @@
-<form id="btn" disabled="disabled">
-  <input type="string" />
-</form>
+<div class="container">
+  <div class="cf featured" id="current_photo">
+    <a class="thumbnail">
+      <img alt="Roeland!" src="<%= @photos.first.image_url %>">
+    </a>
+  </div>
 
-<div class="container" id="photostream">
-  <% @groups.each do |group| %>
-    <div class="item item-w-<%= group.length%> cf">
-      <% group.each do |photo| %>
-        <div class="thumbnail"><img width="100%" src="<%= photo.image_url %>" /></div>
-      <% end %>
-    </div>
-  <% end %>
+  <ul class="polaroids large-block-grid-4 small-block-grid-2" id="photostream">    
+    <% @photos.each do |photo| %>
+      <li>
+        <a class="thumbnail">
+          <img alt="Roeland!" src="<%= photo.image_url %>">
+        </a>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 <script>
   $(function(){
-    $('#btn input').focus();
-    $("#btn").submit(function(){
-      return false;
-    });
-    $('#btn input').bind('keypress', function(e) {
-      if(e.keyCode==13){
+    $(document).bind('keypress', function(e) {
+      if (e.keyCode == 13) {
         $.post("<%= photos_path %>", function(data){
-          $("#photostream").prepend("<li><img width=\"200\" src=\"" + data.image_url + "\"/></li>")
-        })
+          $("#photostream").prepend("<li>" + $("#current_photo").html() + "</li>");
+          $("#current_photo").html("<a class=\"thumbnail\"><img width=\"780px\" src=\"" + data.image_url + "\"/></a>")
+        });
       }
     });
   });

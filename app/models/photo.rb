@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   def image_url
-    "/assets/img#{id}.jpg"
+    "/assets/booth/img#{id}.jpg"
   end
 
   def self.in_groups
