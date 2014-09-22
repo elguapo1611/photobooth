@@ -1,74 +1,64 @@
 body {
-  background:#fff url(wood-bg.jpg);
+  background:#fff url(bg2.png);
 }
+
+
 .container {
-  padding-top:30px;
-  width:960px;
-  margin:0 auto;
+  padding:10px; 
+
 }
 /* By default, we tilt all our images -2 degrees */
-a.thumbnail {
+.thumbnail {
   background: #fff;
-  display: inline;
-  float: left;
-  margin: 0 0 27px 30px;
+  display: block;
   width: auto;
-  padding: 10px 10px 15px;
+  padding: 10px 10px 7px;
   text-align: center;
   text-decoration: none;
   color: #333;
   font-size: 18px;
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  -webkit-transform: rotate(-2deg);
   -webkit-transition: -webkit-transform .15s linear;
   -moz-transform: rotate(-2deg);
 }
- 
+
+img { 
+  
+}
+
 ul.polaroids img {
   width:260px;
+  height:173px;
 }
 
 .featured img {
   width:780px;
 }
-/* Rotate all even images 2 degrees */
-ul.polaroids li:nth-child(even) a {
--webkit-transform: rotate(2deg);
--moz-transform: rotate(2deg);
-}
- 
-/* Don't rotate every third image, but offset its position */
-ul.polaroids li:nth-child(3n) a {
--webkit-transform: none;
--moz-transform: none;
-position: relative;
-top: -5px;
-}
- 
-/* Rotate every fifth image by 5 degrees and offset it */
-ul.polaroids li:nth-child(5n) a {
--webkit-transform: rotate(5deg);
--moz-transform: rotate(5deg);
-position: relative;
-right: 5px;
-}
- 
-/* Keep default rotate for every eighth, but offset it */
-ul.polaroids li:nth-child(8n) a {
-position: relative;
-top: 8px;
-right: 5px;
-}
- 
-/* Keep default rotate for every eleventh, but offset it */
-ul.polaroids li:nth-child(11n) a {
-position: relative;
-top: 3px;
-left: -5px;
-}
 
-.featured {
-  min-height:573px;
-  text-align:center;
+.countdown {
+  display:none;
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 90px;
+  letter-spacing: 3px;
+  color:#fff;
+  z-index: 1005;
+  font-family: 'PlutoSansMedium',sans-serif;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+}
+.countdown-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1004;
+  left: 0;
+  display:none;
 }

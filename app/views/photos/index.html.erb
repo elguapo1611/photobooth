@@ -1,32 +1,21 @@
+<div id="countdown-bg" class="countdown-bg">
+</div>
+<div id="countdown" class="countdown" data-url="<%= photos_path %>">
+    <h1></h1>
+</div>
 <div class="container">
   <div class="cf featured" id="current_photo">
     <% if @photos.first %>
       <a class="thumbnail">
-        <img alt="Roeland!" src="<%= @photos.first.image_url %>">
+        <img alt="<%= @photos.first.image_url %>" src="<%= @photos.first.image_url %>">
       </a>
     <% end %>
   </div>
 
-  <ul class="polaroids large-block-grid-4 small-block-grid-2" id="photostream">    
-    <% @photos.each do |photo| %>
-      <li>
-        <a class="thumbnail">
-          <img alt="Roeland!" src="<%= photo.image_url %>">
-        </a>
-      </li>
-    <% end %>
-  </ul>
 </div>
 
 <script>
   $(function(){
-    $(document).bind('keypress', function(e) {
-      if (e.keyCode == 13) {
-        $.post("<%= photos_path %>", function(data){
-          $("#photostream").prepend("<li>" + $("#current_photo").html() + "</li>");
-          $("#current_photo").html("<a class=\"thumbnail\"><img width=\"780px\" src=\"" + data.image_url + "\"/></a>")
-        });
-      }
-    });
+    new Photobooth();
   });
 </script>
